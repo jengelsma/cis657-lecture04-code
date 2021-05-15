@@ -1,24 +1,24 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
-import { Button } from 'react-native-elements';
-import React from 'react';
+import { Button } from "react-native-elements";
+import React from "react";
 
-const Greeter = ({greeting, buttonTitle}) => {
+class Greeter extends React.Component {
+  render() {
     return (
       <View style={styles.container}>
-          <Text> {greeting} </Text>
-          <TextInput placeholder='Enter your name' />
-          <Button title={buttonTitle} />
+        <Text> {this.props.greeting} </Text>
+        <TextInput placeholder="Enter your name" />
+        <Button title={this.props.buttonTitle} />
       </View>
     );
-
-};
+  }
+}
 
 const styles = StyleSheet.create({
-    container: {
-        margin: 20, 
-
-    }
+  container: {
+    margin: 20,
+  },
 });
 
 export default Greeter;
